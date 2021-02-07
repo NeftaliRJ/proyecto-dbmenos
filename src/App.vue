@@ -1,56 +1,41 @@
 <template>
   <v-app>
+    <LoadingScreen :isLoading="isLoading" />
     <v-app-bar
       app
-      color="primary"
+      color="#0484eb"
       dark
     >
       <div class="d-flex align-center">
         <v-img
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="https://static1.gamerantimages.com/wordpress/wp-content/uploads/2020/06/studio-ghibli-logo.jpg"
           transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
+          width="120"
         />
       </div>
-
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>open_in_new</v-icon>
-      </v-btn>
     </v-app-bar>
-
     <v-main>
-      <HelloWorld/>
+      <v-container>
+        <router-view/>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+
+import LoadingScreen from './components/LoadingScreen.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    LoadingScreen
   },
 
   data: () => ({
