@@ -18,7 +18,7 @@ export default {
 
 <style>
 .loader {
-  background-color: #6374ab;
+  background-color: #345cdd;
   bottom: 0;
   color: white;
   display: block;
