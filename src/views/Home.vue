@@ -244,9 +244,16 @@
                   this.errors.push(e)
               });
       },
-      searchFilm() {
-        console.log(this.$refs.form)
-        console.log(this.searchLocation)
+      async searchFilm() {
+        await axios.get('https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe')
+          .then(response => {
+                  const {data} = response;
+                  data.img = 'https://images.pexels.com/photos/4968506/pexels-photo-4968502.jpeg?auto=compress&cs=tinysrgb&h=350'
+                  this.films = [data]
+              })
+              .catch(e => {
+                  this.errors.push(e)
+              });
       },
       reset () {
         this.$refs.form.reset()
